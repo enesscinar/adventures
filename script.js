@@ -32,13 +32,3 @@ overlay.onclick = function(event) {
         overlay.style.display = "none";
     }
 }
-
-// Detect scroll and reveal footer when the user reaches the bottom
-window.onscroll = function() {
-    var footer = document.querySelector("footer");
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-        footer.classList.add("show-footer"); // Show the footer
-    } else {
-        footer.classList.remove("show-footer"); // Hide the footer when not at the bottom
-    }
-};
