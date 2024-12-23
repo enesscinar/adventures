@@ -1,29 +1,34 @@
-// Get the modal
-var modal = document.getElementById("imageModal");
+// Get the overlay and close button
+var overlay = document.getElementById("overlay");
+var closeButton = document.getElementsByClassName("close")[0];
 
-// Get all images with the class "gallery-image"
+// Get the image elements and set up the click event for each
 var images = document.getElementsByClassName("gallery-image");
+var overlayImage = document.getElementById("overlayImage");
+var overlayCaption = document.getElementById("overlayCaption");
 
-// Get the modal image element
-var modalImg = document.getElementById("modalImage");
-
-// Get the caption element
-var captionText = document.getElementById("modalCaption");
-
-// Loop through each image and add an event listener for clicks
+// Add event listener for all images
 for (var i = 0; i < images.length; i++) {
     images[i].onclick = function(event) {
-        // Get the clicked image and caption
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;  // Display the alt text as the caption (or use data-caption)
+        // Show the overlay
+        overlay.style.display = "flex";
+        
+        // Set the image source to the clicked image's source
+        overlayImage.src = this.src;
+        
+        // Set the caption to the image's data-caption
+        overlayCaption.innerHTML = this.getAttribute("data-caption");
     }
 }
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+// When the user clicks on the close button (×), close the overlay
+closeButton.onclick = function() {
+    overlay.style.display = "none";
+}
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
+// Optionally, close the overlay when clicking anywhere on the overlay
+overlay.onclick = function(event) {
+    if (event.target === overlay) {
+        overlay.style.display = "none";
+    }
 }
