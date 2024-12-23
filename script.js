@@ -1,3 +1,4 @@
+
 // Get the overlay and close button
 var overlay = document.getElementById("overlay");
 var closeButton = document.getElementsByClassName("close")[0];
