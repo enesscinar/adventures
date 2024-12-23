@@ -1,4 +1,4 @@
- /*General body styles */
+/* General body styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -6,8 +6,8 @@ body {
     padding: 0;
     background-color: #f4f4f4;
 }
-/*
- Header styles */
+
+/* Header styles */
 header {
     text-align: center;
     padding: 20px;
@@ -47,22 +47,22 @@ header {
 
 /* Overlay and enlarged image styling */
 .overlay {
-    display: none;  Hidden by default 
+    display: none; /* Hidden by default */
     position: fixed;
-    z-index: 1;  Sit on top 
+    z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);  Dark background 
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
     align-items: center;
     justify-content: center;
     text-align: center;
 }
 
 .overlay-image {
-    max-width: 80%;  Image takes up 80% of the screen width 
-    max-height: 80%;  Image takes up 80% of the screen height 
+    max-width: 80%; /* Image takes up 80% of the screen width */
+    max-height: 80%; /* Image takes up 80% of the screen height */
     margin-bottom: 20px;
 }
 
@@ -90,8 +90,8 @@ header {
     .close:focus {
         color: #bbb;
     }
-/*
- Footer styles */
+
+/* Footer styles */
 footer {
     background-color: #333;
     color: white;
@@ -101,5 +101,3 @@ footer {
     bottom: 0;
     width: 100%;
 }
-
-
