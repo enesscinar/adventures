@@ -1,17 +1,117 @@
-// Image lightbox functionality
-document.querySelectorAll('.gallery-image').forEach(image => {
-    image.addEventListener('click', (event) => {
-        const overlay = document.getElementById('overlay');
-        const overlayImage = document.getElementById('overlayImage');
-        const overlayCaption = document.getElementById('overlayCaption');
-        
-        overlay.style.display = 'flex';
-        overlayImage.src = event.target.src;
-        overlayCaption.textContent = event.target.getAttribute('data-caption');
-    });
-});
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
 
-// Close the overlay when clicking the close button
-document.querySelector('.close').addEventListener('click', () => {
-    document.getElementById('overlay').style.display = 'none';
-});
+/* Header styles */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+}
+
+/* Gallery styles */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.gallery-image {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+
+/* Overlay and enlarged image styling */
+.overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.overlay-image {
+    max-width: 80%; /* Image takes up 80% of the screen width */
+    max-height: 80%; /* Image takes up 80% of the screen height */
+    margin-bottom: 20px;
+}
+
+.overlay-caption {
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: -100px; /* Initially hide the footer off-screen */
+    left: 0;
+    transition: bottom 0.3s ease-in-out;
+}
+
+/* Footer visible at the bottom of the page */
+footer.show-footer {
+    bottom: 0; /* Show the footer when the class is added */
+}
+
+/* Scroll behavior */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding-bottom: 50px; /* Give space for the footer when it becomes visible */
+}
