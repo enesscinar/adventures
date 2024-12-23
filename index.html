@@ -3,84 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Travel Adventures: Munich, Rome, Madrid, Lisbon, Paris, Vienna, Salzburg</title>
+    <title>My Travel Adventures</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <h1>Welcome to My Travel Website</h1>
-        <p>Explore my journeys through the beautiful cities of Europe: Munich, Rome, Madrid, Lisbon, Paris, Vienna, and Salzburg.</p>
+        <h1>My Travel Adventures</h1>
+        <p>Exploring cities like Munich, Rome, Madrid, Lisbon, Paris, Wien, and Salzburg</p>
     </header>
-
-    <nav>
-        <a href="#munich">Munich</a>
-        <a href="#rome">Rome</a>
-        <a href="#madrid">Madrid</a>
-        <a href="#lisbon">Lisbon</a>
-        <a href="#paris">Paris</a>
-        <a href="#vienna">Vienna</a>
-        <a href="#salzburg">Salzburg</a>
-    </nav>
 
     <!-- Munich Section -->
     <section id="munich">
         <h2>Munich</h2>
         <p>Munich, the heart of Bavaria, was an unforgettable experience...</p>
         <div class="gallery">
-            <img src="images/munich1.jpg" alt="Munich City Center" class="gallery-image">
-            <img src="images/munich2.jpg" alt="Neuschwanstein Castle" class="gallery-image">
-            <img src="images/munich3.jpg" alt="Bavarian Beer Garden" class="gallery-image">
+            <a href="javascript:void(0)" class="imageLink" data-caption="Neuschwanstein Castle">
+                <img src="images/munich1.jpg" alt="Munich City Center" class="gallery-image">
+            </a>
+            <a href="javascript:void(0)" class="imageLink" data-caption="Bavarian Beer Garden">
+                <img src="images/munich2.jpg" alt="Bavarian Beer Garden" class="gallery-image">
+            </a>
+            <!-- More images -->
         </div>
     </section>
 
-    <!-- Rome Section -->
-    <section id="rome">
-        <h2>Rome</h2>
-        <p>Rome, the Eternal City, is a dream come true...</p>
-        <div class="gallery">
-            <img src="images/rome1.jpg" alt="The Colosseum" class="gallery-image">
-            <img src="images/rome2.jpg" alt="Pantheon in Rome" class="gallery-image">
-            <img src="images/rome3.jpg" alt="Roman Forum" class="gallery-image">
-        </div>
-    </section>
+    <!-- Add other sections here for Rome, Madrid, etc. -->
 
-    <!-- Madrid Section -->
-    <section id="madrid">
-        <h2>Madrid</h2>
-        <p>Madrid’s mix of modern energy and historical landmarks made it an exciting stop...</p>
-        <div class="gallery">
-            <img src="images/madrid1.jpg" alt="Royal Palace" class="gallery-image">
-            <img src="images/madrid2.jpg" alt="Prado Museum" class="gallery-image">
-            <img src="images/madrid3.jpg" alt="Plaza Mayor in Madrid" class="gallery-image">
-        </div>
-    </section>
+    <footer>
+        <p>© 2024 My Travel Adventures | All photos by [Your Name]</p>
+    </footer>
 
-    <!-- Lisbon Section -->
-    <section id="lisbon">
-        <h2>Lisbon</h2>
-        <p>Lisbon, with its hilltop viewpoints and historic neighborhoods...</p>
-        <div class="gallery">
-            <img src="images/lisbon1.jpg" alt="Alfama District" class="gallery-image">
-            <img src="images/lisbon2.jpg" alt="Tram in Lisbon" class="gallery-image">
-            <img src="images/lisbon3.jpg" alt="Pastéis de Nata" class="gallery-image">
-        </div>
-    </section>
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="modalCaption" class="caption"></div>
+    </div>
 
-    <!-- Paris Section -->
-    <section id="paris">
-        <h2>Paris</h2>
-        <p>Paris is the epitome of romance and culture...</p>
-        <div class="gallery">
-            <img src="images/paris1.jpg" alt="Eiffel Tower at Sunset" class="gallery-image">
-            <img src="images/paris2.jpg" alt="Louvre Museum" class="gallery-image">
-            <img src="images/paris3.jpg" alt="Notre-Dame Cathedral" class="gallery-image">
-        </div>
-    </section>
-
-    <!-- Vienna Section -->
-    <section id="vienna">
-        <h2>Vienna</h2>
-        <p>Vienna, known for its classical music heritage...</p>
-        <div class="gallery">
-            <img src="images/vienna1.jpg" alt="Schönbrunn Palace" class="gallery-image">
-            <img src="images/vienna2.jpg" alt="Vienna State Opera" class="gallery-imag
+    <script src="script.js"></script>
+</body>
+</html>
