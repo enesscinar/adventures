@@ -1,14 +1,14 @@
 /* General body styles */
-body {
+/*body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-}
+}*/
 
 /* Header styles */
-header {
+/*header {
     text-align: center;
     padding: 20px;
     background-color: #333;
@@ -21,10 +21,10 @@ header {
 
     header p {
         font-size: 1.1rem;
-    }
+    }*/
 
 /* Gallery styles */
-.gallery {
+/*.gallery {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -43,27 +43,27 @@ header {
 
     .gallery-image:hover {
         transform: scale(1.05);
-    }
+    }*/
 
 /* Overlay and enlarged image styling */
-.overlay {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1; /* Sit on top */
-    left: 0;
+/*.overlay {
+    display: none;*/ /* Hidden by default */
+    /*position: fixed;
+    z-index: 1;*/ /* Sit on top */
+    /*left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
-    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);*/ /* Dark background */
+    /*align-items: center;
     justify-content: center;
     text-align: center;
 }
 
 .overlay-image {
-    max-width: 80%; /* Image takes up 80% of the screen width */
-    max-height: 80%; /* Image takes up 80% of the screen height */
-    margin-bottom: 20px;
+    max-width: 80%;*/ /* Image takes up 80% of the screen width */
+    /*max-height: 80%;*/ /* Image takes up 80% of the screen height */
+    /*margin-bottom: 20px;
 }
 
 .overlay-caption {
@@ -89,10 +89,10 @@ header {
     .close:hover,
     .close:focus {
         color: #bbb;
-    }
+    }*/
 
 /* Footer styles */
-footer {
+/*footer {
     background-color: #333;
     color: white;
     text-align: center;
@@ -100,4 +100,117 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}*/
+
+/* General body styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navbar Styles */
+.navbar {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px 0;
+    margin: 0;
+}
+
+    .navbar li {
+        margin: 0 15px;
+    }
+
+    .navbar a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+        transition: color 0.3s;
+    }
+
+        .navbar a:hover {
+            color: #ff9900;
+        }
+
+/* Header styles */
+header {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/header-bg.jpg') center/cover no-repeat;
+    color: white;
+}
+
+    header h1 {
+        font-size: 3rem;
+        margin: 0;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+/* Section Styles */
+section {
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+    #contact-form input,
+    #contact-form textarea {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    #contact-form button {
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        #contact-form button:hover {
+            background-color: #ff9900;
+        }
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
 }
