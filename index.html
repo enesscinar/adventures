@@ -4,11 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Adventures by Enes</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts for a more modern look -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+
 </head>
 <body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Sticky Navigation -->
+    <nav id="navbar" class="navbar">
+        <ul>
+            <li><a href="#munich">Munich</a></li>
+            <li><a href="#paris">Paris</a></li>
+            <!-- Add other cities -->
+        </ul>
+    </nav>
+
     <!-- Header -->
     <header>
         <h1>Travel Adventures by Enes</h1>
@@ -16,24 +32,36 @@
     </header>
 
     <!-- Munich Section -->
-    <section id="munich">
+    <section id="munich" class="section">
         <h2>Munich</h2>
         <p>Munich, the heart of Bavaria, was an unforgettable experience...</p>
         <div class="gallery">
-            <img src="images/munich1.jpg" alt="Munich City Center" class="gallery-image" data-caption="Neuschwanstein Castle...">
-            <img src="images/munich2.jpg" alt="Bavarian Beer Garden" class="gallery-image" data-caption="Bavarian Beer Garden...">
-            <!-- More images -->
+            <div class="slideshow-container">
+                <div class="slide fade">
+                    <img src="images/munich1.jpg" alt="Munich1">
+                </div>
+                <div class="slide fade">
+                    <img src="images/munich2.jpg" alt="Munich2">
+                </div>
+                <!-- More slides -->
+            </div>
         </div>
     </section>
 
     <!-- Paris Section -->
-    <section id="paris">
+    <section id="paris" class="section">
         <h2>Paris</h2>
         <p>Paris, the heart of France, was an unforgettable experience...</p>
         <div class="gallery">
-            <img src="images/paris1.jpg" alt="Paris1" class="gallery-image" data-caption="Paris 1 ...">
-            <img src="images/paris2.jpg" alt="Paris2" class="gallery-image" data-caption="Paris 2 ...">
-            <!-- More images -->
+            <div class="slideshow-container">
+                <div class="slide fade">
+                    <img src="images/paris1.jpg" alt="Paris1">
+                </div>
+                <div class="slide fade">
+                    <img src="images/paris2.jpg" alt="Paris2">
+                </div>
+                <!-- More slides -->
+            </div>
         </div>
     </section>
 
@@ -41,13 +69,9 @@
         <p>© 2024 Travels | All photos by Enes Cinar</p>
     </footer>
 
-    <!-- Image Overlay -->
-    <div id="overlay" class="overlay">
-        <span class="close">&times;</span>
-        <img id="overlayImage" class="overlay-image" src="">
-        <div id="overlayCaption" class="overlay-caption"></div>
-    </div>
-
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/scrollEffects.js"></script>
+    <script src="js/lazyLoad.js"></script>
+    <script src="js/map.js"></script>
 </body>
 </html>
