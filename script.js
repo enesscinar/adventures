@@ -1,44 +1,117 @@
-// Get the overlay and close button
-var overlay = document.getElementById("overlay");
-var closeButton = document.getElementsByClassName("close")[0];
-
-// Get the image elements and set up the click event for each
-var images = document.getElementsByClassName("gallery-image");
-var overlayImage = document.getElementById("overlayImage");
-var overlayCaption = document.getElementById("overlayCaption");
-
-// Add event listener for all images
-for (var i = 0; i < images.length; i++) {
-    images[i].onclick = function(event) {
-        // Show the overlay
-        overlay.style.display = "flex";
-        
-        // Set the image source to the clicked image's source
-        overlayImage.src = this.src;
-        
-        // Set the caption to the image's data-caption
-        overlayCaption.innerHTML = this.getAttribute("data-caption");
-    }
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
-// When the user clicks on the close button (×), close the overlay
-closeButton.onclick = function() {
-    overlay.style.display = "none";
+/* Header styles */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
 }
 
-// Optionally, close the overlay when clicking anywhere on the overlay
-overlay.onclick = function(event) {
-    if (event.target === overlay) {
-        overlay.style.display = "none";
-    }
+header h1 {
+    font-size: 2.5rem;
 }
 
-// Detect scroll and reveal footer when the user reaches the bottom
-window.onscroll = function() {
-    var footer = document.querySelector("footer");
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-        footer.classList.add("show-footer"); // Show the footer
-    } else {
-        footer.classList.remove("show-footer"); // Hide the footer when not at the bottom
-    }
-};
+header p {
+    font-size: 1.1rem;
+}
+
+/* Gallery styles */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.gallery-image {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+
+/* Overlay and enlarged image styling */
+.overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.overlay-image {
+    max-width: 80%; /* Image takes up 80% of the screen width */
+    max-height: 80%; /* Image takes up 80% of the screen height */
+    margin-bottom: 20px;
+}
+
+.overlay-caption {
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: -100px; /* Initially hide the footer off-screen */
+    left: 0;
+    transition: bottom 0.3s ease-in-out;
+}
+
+/* Footer visible at the bottom of the page */
+footer.show-footer {
+    bottom: 0; /* Show the footer when the class is added */
+}
+
+/* Scroll behavior */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding-bottom: 50px; /* Give space for the footer when it becomes visible */
+}

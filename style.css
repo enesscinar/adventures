@@ -99,18 +99,19 @@ footer {
     padding: 10px;
     position: fixed;
     width: 100%;
-    bottom: -100px; /* Initially hidden, off-screen */
+    bottom: -100px; /* Initially hide the footer off-screen */
     left: 0;
     transition: bottom 0.3s ease-in-out;
 }
 
     /* Footer visible at the bottom of the page */
     footer.show-footer {
-        bottom: 0; /* Move the footer into view */
+        bottom: 0; /* Show the footer when the class is added */
     }
 
 /* Scroll behavior */
 html, body {
     height: 100%;
     margin: 0;
+    padding-bottom: 50px; /* Give space for the footer when it becomes visible */
 }
