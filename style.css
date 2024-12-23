@@ -63,7 +63,7 @@ h2 {
 
 .gallery-image {
     width: 100%;
-    max-width: 350px;
+    max-width: 250px; /* Adjusted size */
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -93,6 +93,6 @@ footer {
     }
 
     .gallery-image {
-        max-width: 90%;
+        max-width: 90%; /* Adjusted for smaller screens */
     }
 }
